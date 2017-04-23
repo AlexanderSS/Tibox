@@ -52,11 +52,13 @@
   <ItemGroup>
     <Compile Include="BaseRepository.cs" />
     <Compile Include="IRepository.cs" />
+    <Compile Include="IUserRepository.cs" />
     <Compile Include="Northwind\CustomerRepository.cs" />
     <Compile Include="Northwind\ICustomerRepository.cs" />
     <Compile Include="Northwind\IOrderRepository.cs" />
     <Compile Include="Northwind\OrderRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Tibox.Models.csproj">
