@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Tibox.Models;
+using Tibox.UnitOfWork;
 
 namespace Tibox.WebApi.Controllers
 {
@@ -12,7 +13,11 @@ namespace Tibox.WebApi.Controllers
     [Authorize]
     public class SupplierController : BaseController
     {
-            [Route("{id}")]
+        public SupplierController(IUnitOfWork unit) : base(unit)
+        {
+        }
+
+        [Route("{id}")]
             public IHttpActionResult Get(int id)
             {
                 if (id <= 0) return BadRequest();

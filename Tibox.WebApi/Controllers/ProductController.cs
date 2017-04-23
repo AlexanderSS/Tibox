@@ -1,10 +1,12 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Tibox.Models;
+using Tibox.UnitOfWork;
 
 namespace Tibox.WebApi.Controllers
 {
@@ -12,6 +14,12 @@ namespace Tibox.WebApi.Controllers
     [Authorize]
     public class ProductController : BaseController
     {
+        private readonly AbstractValidator<Product> _validator;
+        public ProductController(IUnitOfWork unit, AbstractValidator<Product> validator) : base(unit)
+        {
+            _validator = validator;
+        }
+
         [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
@@ -23,7 +31,10 @@ namespace Tibox.WebApi.Controllers
         [HttpPost]
         public IHttpActionResult Post(Product product)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            // if (!ModelState.IsValid) return BadRequest(ModelState);
+
+            var result = _validator.Validate(product);
+            if (!result.IsValid) return Content(HttpStatusCode.BadRequest, result.Errors);
             var id = _unit.Products.Insert(product);
             return Ok(new { id = id });
         }

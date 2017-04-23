@@ -6,11 +6,11 @@ using System.Linq;
 using System.Net.Http.Extensions.Compression.Core.Compressors;
 using System.Web.Http;
 
-namespace TIBox.WebApi
+namespace Tibox.WebApi
 {
-    public static class WebApiConfig
+    public partial class Startup
     {
-        public static void Register(HttpConfiguration config)
+        public void Register(HttpConfiguration config)
         {
 
             config.MessageHandlers.Insert(0,

@@ -8,13 +8,19 @@ using Tibox.UnitOfWork;
 
 namespace Tibox.WebApi.Controllers
 {
+    [Authorize]
     public class BaseController : ApiController
     {
         protected readonly IUnitOfWork _unit;
 
-        public BaseController()
+        //public BaseController()
+        //{
+        //    _unit = new TiboxUnitOfWork();
+        //}
+
+        public BaseController(IUnitOfWork unit)
         {
-            _unit = new TiboxUnitOfWork();
+            _unit = unit;
         }
     }
 }

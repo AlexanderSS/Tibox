@@ -14,6 +14,11 @@ namespace Tibox.WebApi.Controllers
     [Authorize]
     public class CustomerController : BaseController
     {
+
+       public CustomerController(IUnitOfWork unit) : base(unit)
+        {
+        }
+
         [Route("{id}")]
         public IHttpActionResult Get(int id)
         {
