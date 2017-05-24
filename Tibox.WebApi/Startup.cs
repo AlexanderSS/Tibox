@@ -1,25 +1,20 @@
-﻿
-using Microsoft.Owin;
+﻿using Microsoft.Owin.Cors;
 using Owin;
 using System.Web.Http;
-using Microsoft.Owin.Cors;
-
-[assembly: OwinStartup(typeof(Tibox.WebApi.Startup))]
 
 namespace Tibox.WebApi
 {
     public partial class Startup
-    {
-
+    {        
         public void Configuration(IAppBuilder app)
         {
-            var configuration = new HttpConfiguration();
-            Register(configuration);
+            var config = new HttpConfiguration();
+            Register(config);
             ConfigureOAuth(app);
+            ConfigureInjector(config);
 
             app.UseCors(CorsOptions.AllowAll);
-            ConfigureInjector(configuration);
-            app.UseWebApi(configuration);
+            app.UseWebApi(config);
         }
 
     }

@@ -9,14 +9,14 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{D3118FBE-BCA4-4763-BEC3-4BD94ADA2BBF}</ProjectGuid>
+    <ProjectGuid>{9A02E420-F135-4D9A-A0BC-474B3D1ED420}</ProjectGuid>
     <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Tibox.WebApi</RootNamespace>
     <AssemblyName>Tibox.WebApi</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -157,12 +157,7 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CustomerController.cs" />
-    <Compile Include="Controllers\OrderController.cs" />
-    <Compile Include="Controllers\OrderItemController.cs" />
     <Compile Include="Controllers\ProductController.cs" />
-    <Compile Include="Controllers\SupplierController.cs" />
-    <Compile Include="Middleware\DebugMiddleware.cs" />
-    <Compile Include="Middleware\DebugMiddlewareExtension.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\SimpleAuthorizationServerProvider.cs" />
     <Compile Include="Startup.cs" />
@@ -183,11 +178,11 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Tibox.Models.csproj">
-      <Project>{76D2C39B-04A7-4297-8978-1D8ECBD8CA67}</Project>
+      <Project>{76d2c39b-04a7-4297-8978-1d8ecbd8ca67}</Project>
       <Name>Tibox.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tibox.Repository\Tibox.Repository.csproj">
-      <Project>{F2FC3802-BB38-4365-9B77-AD722A860ACC}</Project>
+      <Project>{f2fc3802-bb38-4365-9b77-ad722a860acc}</Project>
       <Name>Tibox.Repository</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tibox.UnitOfWork\Tibox.UnitOfWork.csproj">
@@ -208,9 +203,9 @@
         <WebProjectProperties>
           <UseIIS>True</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>22474</DevelopmentServerPort>
+          <DevelopmentServerPort>24249</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:17557/</IISUrl>
+          <IISUrl>http://localhost/Tibox.WebApi</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

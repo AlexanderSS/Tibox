@@ -1,8 +1,5 @@
-using Dapper.Contrib.Extensions;
-
 namespace Tibox.Models
 {
-    [Table("OrderItem")]
     public class OrderItem
     {
         public int Id { get; set; }

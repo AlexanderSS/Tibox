@@ -1,9 +1,5 @@
-using Dapper.Contrib.Extensions;
-using System.ComponentModel.DataAnnotations;
-
 namespace Tibox.Models
 {
-    [Table("[Supplier]")]
     public class Supplier
     {        
         public int Id { get; set; }        

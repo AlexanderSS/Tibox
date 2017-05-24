@@ -16,6 +16,6 @@ namespace Tibox.UnitOfWork
         IRepository<OrderItem> OrderItems { get; }
         IRepository<Product> Products { get; }
         IRepository<Supplier> Suppliers { get; }
-        IUserRepository Users { get; }
+        IUserRepository Users { get;  }
     }
 }

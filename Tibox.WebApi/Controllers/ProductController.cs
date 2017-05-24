@@ -1,9 +1,4 @@
 ﻿using FluentValidation;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Net.Http;
 using System.Web.Http;
 using Tibox.Models;
 using Tibox.UnitOfWork;
@@ -11,7 +6,6 @@ using Tibox.UnitOfWork;
 namespace Tibox.WebApi.Controllers
 {
     [RoutePrefix("product")]
-    [Authorize]
     public class ProductController : BaseController
     {
         private readonly AbstractValidator<Product> _validator;
@@ -31,10 +25,11 @@ namespace Tibox.WebApi.Controllers
         [HttpPost]
         public IHttpActionResult Post(Product product)
         {
-            // if (!ModelState.IsValid) return BadRequest(ModelState);
-
+            //if (!ModelState.IsValid) return BadRequest(ModelState);
             var result = _validator.Validate(product);
-            if (!result.IsValid) return Content(HttpStatusCode.BadRequest, result.Errors);
+            if (!result.IsValid)
+                return Content(System.Net.HttpStatusCode.BadRequest, result.Errors);
+
             var id = _unit.Products.Insert(product);
             return Ok(new { id = id });
         }
@@ -44,7 +39,7 @@ namespace Tibox.WebApi.Controllers
         public IHttpActionResult Put(Product product)
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
-            var id = _unit.Products.Update(product);
+            if (!_unit.Products.Update(product)) return BadRequest("Incorrect id");
             return Ok(new { status = true });
         }
 
@@ -52,16 +47,17 @@ namespace Tibox.WebApi.Controllers
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            if (id <= 0) return BadRequest();
             var result = _unit.Products.Delete(new Product { Id = id });
             return Ok(new { delete = true });
         }
 
-        [Route("list")]
         [HttpGet]
+        [Route("list")]
         public IHttpActionResult GetList()
         {
             return Ok(_unit.Products.GetAll());
         }
+
     }
 }

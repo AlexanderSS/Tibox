@@ -18,7 +18,7 @@ namespace Tibox.UnitOfWork
             OrderItems = new BaseRepository<OrderItem>();
             Products = new BaseRepository<Product>();
             Suppliers = new BaseRepository<Supplier>();
-            Users = new UserRepository();          
+            Users = new UserRepository();         
         }
         public ICustomerRepository Customers { get; private set; }
         public IOrderRepository Orders { get; private set; }

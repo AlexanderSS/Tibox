@@ -12,12 +12,6 @@ namespace Tibox.WebApi.Controllers
     public class BaseController : ApiController
     {
         protected readonly IUnitOfWork _unit;
-
-        //public BaseController()
-        //{
-        //    _unit = new TiboxUnitOfWork();
-        //}
-
         public BaseController(IUnitOfWork unit)
         {
             _unit = unit;
