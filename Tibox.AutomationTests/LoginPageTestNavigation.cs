@@ -21,10 +21,10 @@ namespace Tibox.AutomationTests
         public void LoginTest()
         {
             LoginPage.Go();
-            LoginPage.LoginAs("juvega@gmail.com").WithPassword("12345678").Login();
+            LoginPage.LoginAs("chino@gmail.com").WithPassword("123456").Login();
 
             Thread.Sleep(TimeSpan.FromSeconds(2));
-            LoginPage.GetUrl().Should().Be("http://localhost/Tibox.Angular/#!/product");
+            LoginPage.GetUrl().Should().Be("http://localhost/Tibox.Web/#!/home");
             LoginPage.Logout();
             Driver.CloseInstance();
         }

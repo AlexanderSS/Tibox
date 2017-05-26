@@ -1,0 +1,48 @@
+﻿<div ng-controller="orderController as vm">
+    <h1>Order Controller</h1>
+
+    <div>
+        <button ng-click="vm.create();"
+                class="btn btn-primary btn-sm"
+                data-toggle="modal"
+                data-target="#modal-container">
+            <span class="glyphicon glyphicon-plus-sign"></span> Crear
+        </button>
+    </div>
+
+    <div class="container-fluid col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <order-card class="row-fluid well col-xs-12 col-sm-6 col-md-3 col-md-offset-1 col-lg-3 col-lg-offset-1"
+                    ng-repeat="order in vm.orderList"
+                    id="{{::order.id}}"
+                    order-date="{{::order.orderDate}}"
+                    order-number="{{::order.orderNumber}}"
+                    customer-id="{{::order.customerId}}"
+                    total-amount="{{::order.totalAmount}}">
+
+            <button ng-click="vm.getOrder(order.id); vm.edit();"
+                    class="btn btn-success btn-sm"
+                    data-toggle="modal"
+                    data-target="#modal-container"
+                    id="act{{order.id}}>
+                <span class="glyphicon glyphicon-edit"></span> Editar
+            </button>
+
+            <button ng-click="vm.getOrder(order.id); vm.delete();"
+                    class="btn btn-danger btn-sm"
+                    data-toggle="modal"
+                    data-target="#modal-container"
+                    id="elim{{order.id}}>
+                <span class="glyphicon glyphicon-trash"></span> Eliminar
+            </button>
+        </order-card>
+    </div>
+    <modal-panel title="{{vm.modalTitle}}"
+                 button-title="{{vm.modalButtonTitle}}"
+                 save-function="vm.modalFunction"
+                 close-function="vm.closeModal"
+                 read-only="vm.readOnly"
+                 is-delete="vm.isDelete">
+        <order-form order="vm.order">
+        </order-form>
+    </modal-panel>
+</div>

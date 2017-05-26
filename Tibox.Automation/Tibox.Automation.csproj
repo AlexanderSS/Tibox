@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Driver.cs" />
     <Compile Include="LoginPage.cs" />
+    <Compile Include="OrderPage.cs" />
     <Compile Include="SimpleTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

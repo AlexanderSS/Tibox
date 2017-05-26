@@ -94,7 +94,9 @@
   <ItemGroup>
     <Compile Include="CustomerController.Tests.cs" />
     <Compile Include="MockData\MockedCustomerRepository.cs" />
+    <Compile Include="MockData\MockedOrderRepository.cs" />
     <Compile Include="MockData\MockedUnitOfWork.cs" />
+    <Compile Include="OrderController.Tests.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

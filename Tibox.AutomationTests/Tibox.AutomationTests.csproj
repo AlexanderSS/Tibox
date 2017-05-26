@@ -75,6 +75,7 @@
   <ItemGroup>
     <Compile Include="BasicTest.cs" />
     <Compile Include="LoginPageTestNavigation.cs" />
+    <Compile Include="OrderPageTestNavigation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

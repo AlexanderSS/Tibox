@@ -13,7 +13,7 @@ namespace Tibox.Automation
     {
         public static void Go()
         {
-            Driver.Instance.Navigate().GoToUrl("http://localhost/Tibox.Angular/");
+            Driver.Instance.Navigate().GoToUrl("http://localhost/Tibox.Web/");
 
             Driver.Instance.FindElement(By.CssSelector("a[href='#!/login']")).Click();
         }
@@ -37,8 +37,8 @@ namespace Tibox.Automation
         public static void Logout()
         {
             var wait = new WebDriverWait(Driver.Instance, TimeSpan.FromSeconds(10));
-            wait.Until(driver => driver.FindElement(By.CssSelector("a[ng-click='vm.logout()']")));
-            Driver.Instance.FindElement(By.CssSelector("a[ng-click='vm.logout()']")).Click();
+            wait.Until(driver => driver.FindElement(By.CssSelector("a[href='#!/login']")));
+            Driver.Instance.FindElement(By.CssSelector("a[href='#!/login']")).Click();
         }
     }
 
@@ -68,5 +68,6 @@ namespace Tibox.Automation
 
             Driver.Instance.FindElement(By.CssSelector("button.btn.btn-primary")).Click();
         }
+
     }
 }

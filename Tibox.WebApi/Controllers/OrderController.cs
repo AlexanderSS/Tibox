@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FluentValidation;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
@@ -10,9 +11,9 @@ using Tibox.UnitOfWork;
 namespace Tibox.WebApi.Controllers
 {
     [RoutePrefix("order")]
-    [Authorize]
     public class OrderController : BaseController
     {
+        //private readonly AbstractValidator<Order> _validator;
         public OrderController(IUnitOfWork unit) : base(unit)
         {
         }
@@ -30,7 +31,7 @@ namespace Tibox.WebApi.Controllers
         {
             if (!ModelState.IsValid) return BadRequest(ModelState);
             var id = _unit.Orders.Insert(order);
-            return Ok(new { id = id });
+            return Ok(id);
         }
 
         [Route("")]

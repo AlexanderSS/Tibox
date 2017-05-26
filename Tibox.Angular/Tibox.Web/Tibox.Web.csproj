@@ -114,6 +114,12 @@
     <Content Include="app\app.controller.js" />
     <Content Include="app\components\modal\modal-directive.html" />
     <Content Include="app\components\modal\modal.directive.js" />
+    <Content Include="app\private\order\directives\order-card\order-card.html" />
+    <Content Include="app\private\order\directives\order-card\order-card.js" />
+    <Content Include="app\private\order\directives\order-form\order-form.html" />
+    <Content Include="app\private\order\directives\order-form\order-form.js" />
+    <Content Include="app\private\order\index.html" />
+    <Content Include="app\private\order\order.controller.js" />
     <Content Include="app\private\product\directives\product-card\product-card.html" />
     <Content Include="app\private\product\directives\product-card\product-card.js" />
     <Content Include="app\private\product\directives\product-form\product-form.html" />
@@ -145,7 +151,9 @@
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff" />
     <Content Include="Content\bootstrap\fonts\glyphicons-halflings-regular.woff2" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <None Include="Content\scss\base\_button.scss" />
     <None Include="Content\scss\base\_input.scss" />
     <None Include="Content\scss\base\_navigation.scss" />
@@ -196,16 +204,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
-          <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>29620</DevelopmentServerPort>
-          <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost/Tibox.Web</IISUrl>
-          <NTLMAuthentication>False</NTLMAuthentication>
-          <UseCustomServer>False</UseCustomServer>
-          <CustomServerUrl>
-          </CustomServerUrl>
-          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
         </WebProjectProperties>
       </FlavorProperties>
     </VisualStudio>
