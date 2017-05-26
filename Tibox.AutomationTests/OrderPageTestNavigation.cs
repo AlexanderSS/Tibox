@@ -42,7 +42,7 @@ namespace Tibox.AutomationTests
             OrderPage.LoginOrder();
             Thread.Sleep(TimeSpan.FromSeconds(2));
 
-            OrderPage.CreateOrder("12049").withOrderDate("2017-05-25").withCustomerId("1").withTotalAmount("100").OrderUpdate();
+            OrderPage.CreateOrder("12050").withOrderDate("2017-05-26").withCustomerId("12").withTotalAmount("1000").OrderUpdate();
 
             Thread.Sleep(TimeSpan.FromSeconds(5));
             Driver.CloseInstance();
